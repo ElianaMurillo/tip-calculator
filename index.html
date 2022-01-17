@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>tip-calculator</title>
+</head>
+<body>
+    <header>
+        <h2>S P L I</h2>
+        <h2>T T E R</h2>
+    </header>
+    <main>
+    <div class="container">
+        <section class="container-left">
+            <label class="title-input" for="billetera">Bill</label>
+            <div class="input-container">    
+                <input class="input-bill" type="number" id="wallet" name="billetera" placeholder="0">
+                <i class="fas fa-dollar-sign icon"></i>
+            </div>
+            <div class="input-container">
+                <p class="title-input">Select Tip %</p>
+                <div class="input-container-tip">
+                    <button class="btn-tip" type="button">5%</button>
+                    <button class="btn-tip" type="button">10%</button>
+                    <button class="btn-tip" type="button">15%</button>
+                    <button class="btn-tip" type="button">25%</button>
+                    <button class="btn-tip" type="button">50%</button>
+                    <input class="input-custom" type="number" name="" id="custom" placeholder="Custom">
+                </div>  
+            </div>
+            <label class="title-input" for="personas">Number of People</label>
+            <div class="input-container">
+                <input class="input-people" type="number" id="people" name="personas" placeholder="0">
+                <i class="fas fa-user icon"></i>
+            </div>
+        </section>
+        <section class="container-right">
+            <div class="container-summary">
+                <div>
+                    <p class="title-summary">Tip Amount</p>
+                    <p class="summary-person">/ person</p>
+                </div>
+                <div>
+                    <p class="number-summary">$17.10</p>
+                </div>
+            </div>
+            <div class="container-summary">
+                <div>
+                    <p class="title-summary">Total</p>
+                    <p class="summary-person">/ person</p>
+                </div>
+                <div>
+                    <p class="number-summary">$17.10</p>
+                </div>
+            </div>
+            <button class="btn-reset" type="reset">RESET</button>
+        </section>
+    </div>
+    </main>
+</body>
+</html>
