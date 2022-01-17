@@ -11,33 +11,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <title>tip-calculator</title>
 </head>
-<body>
-    <script>
-        setTimeout(
-            () => {
-                const btnsTip = document.getElementsByClassName('btn-tip')
-                if (btnsTip.length > 0) {
-                    for (let i = 0; i < btnsTip.length; i++) {
-                        btnsTip[i].addEventListener('click', () => {
-                            let wasActive = false
-                            for (let j = 0; j < btnsTip.length; j++) {
-                                if (btnsTip[j].classList.contains('btn-active')) {
-                                    btnsTip[j].classList.remove('btn-active')
-                                    wasActive = i === j ? true : false // operador ternario
-                                }   
-                            }
-                            if (!btnsTip[i].classList.contains('btn-active') && !wasActive) {
-                                btnsTip[i].classList.add('btn-active')
-                            } else {
-                                btnsTip[i].classList.remove('btn-active')
-                            }
-                        })
-                    }
-                }
-            }, 
-            2000
-        )
-    </script> 
+<body> 
+    <script src="./index.js"></script> 
     <header>
         <h2>S P L I</h2>
         <h2>T T E R</h2>
@@ -45,9 +20,9 @@
     <main>
     <div class="container">
         <section class="container-left">
-            <label class="title-input" for="billetera">Bill</label>
+            <label class="title-input" for="bill">Bill</label>
             <div class="input-container">    
-                <input class="input-bill" type="number" id="wallet" name="billetera" placeholder="0">
+                <input class="input-bill" type="number" id="bill" name="bill" placeholder="0">
                 <i class="fas fa-dollar-sign icon"></i>
             </div>
             <div class="input-container">
@@ -61,9 +36,9 @@
                     <input class="input-custom" type="number" name="" id="custom" placeholder="Custom">
                 </div>  
             </div>
-            <label class="title-input" for="personas">Number of People</label>
+            <label class="title-input" for="people">Number of People</label>
             <div class="input-container">
-                <input class="input-people" type="number" id="people" name="personas" placeholder="0">
+                <input class="input-people" type="number" id="people" name="people" placeholder="0">
                 <i class="fas fa-user icon"></i>
             </div>
         </section>
@@ -75,7 +50,7 @@
                         <p class="summary-person">/ person</p>
                     </div>
                     <div>
-                        <p class="number-summary">$17.10</p>
+                        <p class="number-summary" id="tip-amount">$17.10</p>
                     </div>
                 </div>
                 <div class="container-summary">
@@ -84,11 +59,11 @@
                         <p class="summary-person">/ person</p>
                     </div>
                     <div>
-                        <p class="number-summary">$17.10</p>
+                        <p class="number-summary" id="total-amount">$17.10</p>
                     </div>
                 </div>
             </div>
-            <button class="btn-reset" type="reset">RESET</button>
+            <button class="btn-reset" type="reset" id="btn-reset" >RESET</button>
         </section>
     </div>
     </main>
