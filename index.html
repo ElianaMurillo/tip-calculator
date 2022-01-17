@@ -12,6 +12,32 @@
     <title>tip-calculator</title>
 </head>
 <body>
+    <script>
+        setTimeout(
+            () => {
+                const btnsTip = document.getElementsByClassName('btn-tip')
+                if (btnsTip.length > 0) {
+                    for (let i = 0; i < btnsTip.length; i++) {
+                        btnsTip[i].addEventListener('click', () => {
+                            let wasActive = false
+                            for (let j = 0; j < btnsTip.length; j++) {
+                                if (btnsTip[j].classList.contains('btn-active')) {
+                                    btnsTip[j].classList.remove('btn-active')
+                                    wasActive = i === j ? true : false // operador ternario
+                                }   
+                            }
+                            if (!btnsTip[i].classList.contains('btn-active') && !wasActive) {
+                                btnsTip[i].classList.add('btn-active')
+                            } else {
+                                btnsTip[i].classList.remove('btn-active')
+                            }
+                        })
+                    }
+                }
+            }, 
+            2000
+        )
+    </script> 
     <header>
         <h2>S P L I</h2>
         <h2>T T E R</h2>
@@ -42,22 +68,24 @@
             </div>
         </section>
         <section class="container-right">
-            <div class="container-summary">
-                <div>
-                    <p class="title-summary">Tip Amount</p>
-                    <p class="summary-person">/ person</p>
+            <div>
+                <div class="container-summary">
+                    <div>
+                        <p class="title-summary">Tip Amount</p>
+                        <p class="summary-person">/ person</p>
+                    </div>
+                    <div>
+                        <p class="number-summary">$17.10</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="number-summary">$17.10</p>
-                </div>
-            </div>
-            <div class="container-summary">
-                <div>
-                    <p class="title-summary">Total</p>
-                    <p class="summary-person">/ person</p>
-                </div>
-                <div>
-                    <p class="number-summary">$17.10</p>
+                <div class="container-summary">
+                    <div>
+                        <p class="title-summary">Total</p>
+                        <p class="summary-person">/ person</p>
+                    </div>
+                    <div>
+                        <p class="number-summary">$17.10</p>
+                    </div>
                 </div>
             </div>
             <button class="btn-reset" type="reset">RESET</button>

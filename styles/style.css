@@ -60,7 +60,7 @@ main{
     flex-wrap: wrap;
 }
 
-.input-container-tip button{
+.btn-tip {
     all: unset;
     min-width: 30%;    
     background-color: hsl(183, 100%, 15%);
@@ -68,6 +68,11 @@ main{
     text-align: center;
     border-radius: 0.2rem;
     margin: 0.125rem;
+}
+
+.btn-active {
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(185, 85%, 68%);
 }
 
 .input-container-tip input{
@@ -85,21 +90,22 @@ main{
     padding-left: 0.5rem;
 }
 
-/*input::placeholder{
-    text-align: right;
-}*/
-
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
     appearance: none;
     margin: 0 0.5rem;
 }
 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .input-bill, .input-people{
     text-align: right;
     background-color: hsl(189, 41%, 97%);
     border: none;
-    padding: 0.3rem 0;
+    padding: 0.3rem;
     color: hsl(185, 41%, 84%);
     font-size: 0.75rem;
 }
@@ -120,7 +126,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 0.85rem;
     display: flex;
     flex-direction: column;
-    position: relative;
+    justify-content: space-between;
 }
 
 .title-summary{
@@ -155,7 +161,6 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
     color: hsla(188, 14%, 56%, 0.26);
     font-weight: 700;
-    position: absolute;
     bottom: 1rem;
 }
 
