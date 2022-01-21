@@ -22,19 +22,34 @@ setTimeout(
             }
         }
 
+        // GET TIP SELECTED
+        const getTipSelected = () => {
+            let htmlColl = document.getElementsByClassName('btn-tip')
+            let arrayBtns = Array.from(htmlColl)
+            let tipSelected = 0
+            arrayBtns.forEach(
+                (btn) => {
+                  if (btn.classList.contains('btn-active')) {
+                      tipSelected = parseFloat(btn.innerText)
+                  }
+                }
+            )
+            return tipSelected
+        }
         
         // CALCULATE TIP
         function calculateTip() {
             const totalBill = parseFloat(document.getElementById('bill').value) // get total
             const numberOfPeople = parseFloat(document.getElementById('people').value) // get number of people
-            const tip = 5
+            const tip = getTipSelected()
             const tipAmountPerPerson = (totalBill * tip/100) / numberOfPeople
             const totalPerPerson = (totalBill * (1 + (tip/100))) / numberOfPeople
             const tipAmount = document.getElementById('tip-amount')
             const totalAmount = document.getElementById('total-amount')
-            tipAmount.innerText = tipAmountPerPerson
-            totalAmount.innerText = totalPerPerson
+            tipAmount.innerText = tipAmountPerPerson.toFixed(2)
+            totalAmount.innerText = totalPerPerson.toFixed(2)
         }
+        
         document.getElementById('btn-reset').onclick = calculateTip
     }, 
     2000
