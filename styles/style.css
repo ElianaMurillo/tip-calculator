@@ -204,3 +204,14 @@ input[type=number] {
 @media (max-width: 480px){
 
 }
+
+/*---------------------VALIDATIONS----------------------*/
+#label-people-validation {
+    font-size: 0.5rem;
+    color: tomato;
+    display: none;
+}
+
+.input-people-validation {
+    outline: solid 2px tomato !important;
+}

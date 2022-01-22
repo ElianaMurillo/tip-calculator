@@ -82,13 +82,29 @@ setTimeout(
         billInput.addEventListener('input', () => {calculateTip()})
         
         const numberOfPeople = document.getElementById('people')
-        numberOfPeople.addEventListener('input', () => {calculateTip()})
+        numberOfPeople.addEventListener('input', () => {
+            numberOfPeopleValidation()
+            calculateTip()
+        })
 
         const fixedTip = Array.from(document.getElementsByClassName('btn-tip'))
         fixedTip.forEach(() => addEventListener('click', () => {calculateTip()}))
 
         const customTip = document.getElementById('custom')
         customTip.addEventListener('input', () => {calculateTip()})
+
+        // VALIDATORS
+        function numberOfPeopleValidation() {
+            const inputPeople = document.getElementById('people')
+            const labelError = document.getElementById('label-people-validation')
+            if (inputPeople.value === "0") {
+                inputPeople.classList.add('input-people-validation')
+                labelError.style = "display: block;"
+            } else {
+                inputPeople.classList.remove('input-people-validation')
+                labelError.style = "display: none;"
+            }
+        }
 
         
     }, 
