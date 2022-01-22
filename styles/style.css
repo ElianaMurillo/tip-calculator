@@ -200,19 +200,51 @@ input[type=number] {
     background-color: hsl(185, 85%, 68%);
 }
 
-/*---------------------MEDIA QUERY----------------------*/
-@media (max-width: 480px){
-
-}
-
 /*---------------------VALIDATIONS----------------------*/
 #label-people-validation {
     font-size: 0.5rem;
-    border-bottom: 10px;
     color: tomato;
     display: none;
+    text-align: right;
 }
 
 .input-people-validation {
     outline: solid 2px tomato !important;
+}
+
+/*---------------------MEDIA QUERY----------------------*/
+@media (max-width: 480px){
+    .container{
+        width: 100%;
+        margin: 0;
+        flex-direction: column;
+    }
+
+    .container-left, .container-right{
+        width: 100%;
+    }
+
+    .input-container-tip{
+        justify-content: space-around;
+    }
+
+    .btn-tip {
+        min-width: 40%; 
+    }
+
+    .input-custom{
+        
+    }
+}
+
+@media (max-width: 768px){
+    .container{
+        width: 90%;
+    }
+}
+
+@media (max-width: 1279px){
+    .container{
+        width: 70%;
+    }
 }
