@@ -63,8 +63,8 @@ setTimeout(
             const totalPerPerson = (totalBill * (1 + (tip/100))) / numberOfPeople
             const tipAmount = document.getElementById('tip-amount')
             const totalAmount = document.getElementById('total-amount')
-            tipAmount.innerText = tipAmountPerPerson.toFixed(2)
-            totalAmount.innerText = totalPerPerson.toFixed(2)
+            tipAmount.innerText = tipAmountPerPerson.toFixed(1)
+            totalAmount.innerText = totalPerPerson.toFixed(1)
         }
 
         // RESET BUTTON

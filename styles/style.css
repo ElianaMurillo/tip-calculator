@@ -33,7 +33,7 @@ main{
     border-radius: 0.85rem;
     width: 60%;
     background-color: white;
-    margin: 10%;
+    margin: 5%;
     padding: 1rem 1rem 0 1rem;
 }
 
@@ -93,7 +93,11 @@ main{
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
     appearance: none;
-    margin: 0 0.5rem;
+    margin: 0 0.1rem;
+}
+
+p.number-summary::-webkit-scrollbar {
+    display: none;
 }
 
 /* Firefox */
@@ -106,15 +110,15 @@ input[type=number] {
     background-color: hsl(189, 41%, 97%);
     border: none;
     padding: 0.3rem;
-    color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
     font-size: 0.75rem;
 }
 
 .input-custom{
     text-align: center;
     background-color: hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
     border: none;
-    color: hsl(185, 41%, 84%);
     font-size: 0.75rem;
 }
 
@@ -137,6 +141,13 @@ input[type=number] {
 .number-summary{
     font-weight: 700;
     color: hsl(185, 85%, 68%);
+    overflow-x: scroll;
+}
+
+.icon-total{
+    font-weight: 700;
+    color: hsl(185, 85%, 68%);
+    padding: 0 0.1rem;
 }
 
 .summary-person{
@@ -146,9 +157,20 @@ input[type=number] {
 
 .container-summary{
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 1.5rem;
+}
+
+.bill-container{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    max-width: 40%;
+}
+
+.bill-total{
+    width: 60%;
+    max-width: 60%;
 }
 
 .btn-reset{
@@ -165,9 +187,8 @@ input[type=number] {
 }
 
 /*------------------------ANIMATIONS-------------------*/
-.input-bill:hover, .input-custom:hover, .input-people:hover{
+.input-bill:hover, .input-custom:hover, .input-people:hover, .input-bill:active, .input-custom:active, .input-people:active{
     cursor: pointer;
-    color: hsl(183, 100%, 15%);
     font-weight: 700;
     border-color: hsl(185, 85%, 68%);
     outline-color: hsl(185, 85%, 68%);
@@ -177,4 +198,9 @@ input[type=number] {
     cursor: pointer;
     color: hsl(183, 100%, 15%);
     background-color: hsl(185, 85%, 68%);
+}
+
+/*---------------------MEDIA QUERY----------------------*/
+@media (max-width: 480px){
+
 }
