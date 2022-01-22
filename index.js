@@ -1,6 +1,9 @@
 setTimeout(
     () => {
 
+        var allowedDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+        var allowedChars = ['.', ',']
+
         // TIP BUTTON STATUS
         // obtiene todos los elementos con clase 'btn-tip'
         const btnsTip = document.getElementsByClassName('btn-tip')
@@ -82,8 +85,8 @@ setTimeout(
         billInput.addEventListener('input', () => {calculateTip()})
         
         const numberOfPeople = document.getElementById('people')
-        numberOfPeople.addEventListener('input', () => {
-            numberOfPeopleValidation()
+        numberOfPeople.addEventListener('input', (e) => {
+            numberOfPeopleValidation(e)
             calculateTip()
         })
 
@@ -94,18 +97,22 @@ setTimeout(
         customTip.addEventListener('input', () => {calculateTip()})
 
         // VALIDATORS
-        function numberOfPeopleValidation() {
+        function numberOfPeopleValidation(e) {
+            const keyPressed = e.data
+            if (allowedDigits.indexOf(keyPressed) === -1) {
+                console.log("entra")
+                e.preventDefault()
+            }
             const inputPeople = document.getElementById('people')
             const labelError = document.getElementById('label-people-validation')
             if (inputPeople.value === "0") {
                 inputPeople.classList.add('input-people-validation')
-                labelError.style = "display: block;"
+                labelError.style = "display: block; margin-bottom: 3px;"
             } else {
                 inputPeople.classList.remove('input-people-validation')
                 labelError.style = "display: none;"
             }
         }
-
         
     }, 
     2000

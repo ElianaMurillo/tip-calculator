@@ -208,6 +208,7 @@ input[type=number] {
 /*---------------------VALIDATIONS----------------------*/
 #label-people-validation {
     font-size: 0.5rem;
+    border-bottom: 10px;
     color: tomato;
     display: none;
 }
